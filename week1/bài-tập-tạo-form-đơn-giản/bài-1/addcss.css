@@ -1,0 +1,20 @@
+div#lvl2 {
+    position: relative;
+    width: 450px;
+    height: 350px;
+    top: 50px;
+    left: 50px;
+    background-color: aqua;
+}
+form#lvl1 {
+    position: absolute;
+    width: 350px;
+    height: 250px;
+    top: 52px;
+    left: 52px;
+    background-color: aliceblue;
+}
+caption#hooby {
+    background-color: orangered;
+    color: white;
+}
