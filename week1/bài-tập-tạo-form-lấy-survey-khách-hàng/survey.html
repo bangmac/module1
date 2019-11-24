@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="creatcss.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<form action="survey.html" method="post">
+    <hr>
+    <h2>Market Research Survey</h2>
+    <p>Please take a few moments to complete this satisfation survey</p>
+    <hr>
+    <p><b>What is your age range?</b></p>
+    <select>
+        <option>18-24</option>
+        <option>25-36</option>
+        <option>37-48</option>
+        <option>48-60</option>
+        <option>trên 60</option>
+    </select>
+    <p><b>What is your yearly income range?</b></p>
+    <select>
+        <option>$0-$25.000</option>
+        <option>$25.000-$50.000</option>
+        <option>$50.000-$200.000</option>
+        <option>above $200.000</option>
+    </select>
+    <p><b>Gender</b></p>
+    <label><input type="radio" name="gender">Male</label><br>
+    <label><input type="radio" name="gender">Female</label>
+    <p><b>Which of the follow products have your purchased in the last 2 months. Please check all that apply.</b></p>
+    <label><input type="checkbox" name="product"> Product 1</label><br>
+    <label><input type="checkbox" name="product"> Product 2</label><br>
+    <label><input type="checkbox" name="product"> Product 3</label>
+    <p><b>How often would you use our new product?</b></p>
+    <label><input type="radio" name="often">Daily</label><br>
+    <label><input type="radio" name="often">Weekly</label><br>
+    <label><input type="radio" name="often">Monthly</label>
+    <p><b>What would you pay for new product?</b></p>
+    <table>
+        <tr>
+            <td rowspan="2" id="top">$</td>
+            <td><input type="number" placeholder="exp9999"></td>
+            <td rowspan="2">.</td>
+            <td><input type="number"></td>
+        </tr>
+        <tr>
+            <td>Dollar</td>
+            <td>Cents</td>
+        </tr>
+    </table>
+    <p><b>What features would you like to see in the new product?</b></p>
+    <textarea cols="100" rows="5"></textarea>
+    <p>Please rate your level of agreement with the following statements.</p>
+    <table border="1">
+        <tr>
+            <th></th>
+            <th>Strongly Disagree</th>
+            <th>Disagree</th>
+            <th>Agree</th>
+            <th>Strongly Agree</th>
+        </tr>
+        <tr>
+            <th align="left"><b>Our products are priced fairly.</b></th>
+            <td align="center">
+                <label><input name="agreement" type="radio"></label><br>
+                1
+            </td>
+            <td align="center">
+                <label><input name="agreement" type="radio"></label><br>
+                2
+            </td>
+            <td align="center">
+                <label><input name="agreement" type="radio"></label><br>
+                3
+            </td>
+            <td align="center">
+                <label><input name="agreement" type="radio"></label><br>
+                4
+            </td>
+        </tr>
+        <tr>
+            <th align="left"><b>Our products are hight quanlity.</b></th>
+            <td align="center">
+                <label><input name="agreement" type="radio"></label><br>
+                1
+            </td>
+            <td align="center">
+                <label><input name="agreement" type="radio"></label><br>
+                2
+            </td>
+            <td align="center">
+                <label><input name="agreement" type="radio"></label><br>
+                3
+            </td>
+            <td align="center">
+                <label><input name="agreement" type="radio"></label><br>
+                4
+            </td>
+        </tr>
+        <tr>
+            <th align="left"><b>You would recomamend our product to a friend or coworker.</b></th>
+            <td align="center">
+                <label><input name="agreement" type="radio"></label><br>
+                1
+            </td>
+            <td align="center">
+                <label><input name="agreement" type="radio"></label><br>
+                2
+            </td>
+            <td align="center">
+                <label><input name="agreement" type="radio"></label><br>
+                3
+            </td>
+            <td align="center">
+                <label><input name="agreement" type="radio"></label><br>
+                4
+            </td>
+        </tr>
+    </table>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>
