@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="đăng-ký-học-viên-css.css">
+</head>
+<body>
+<form action="đăng-ký-học-viên.html" method="post" id="register">
+    <table border="1">
+        <caption><h3 align="left" id="heading">ĐĂNG KÝ HỌC VIÊN</h3></caption>
+        <tr>
+            <td align="left">Họ và Tên</td>
+            <td><input type="text" name="name"></td>
+        </tr>
+        <tr>
+            <td align="left">Ngày sinh</td>
+            <td><input type="text" name="birthday"></td>
+        </tr>
+        <tr>
+            <td align="left">Giới tính</td>
+            <td>
+                <label><input type="radio" name="gender">Nam</label>
+                <label><input type="radio" name="gender">Nữ</label>
+            </td>
+        </tr>
+        <tr>
+            <td align="left">Địa chỉ</td>
+            <td><textarea cols="50" rows="4"></textarea></td>
+        </tr>
+        <tr>
+            <td align="left">Lớp</td>
+            <td>
+                <select>
+                    <option value="lớp 1"></option>
+                    <option value="lớp 2"></option>
+                    <option value="lớp 3"></option>
+                    <option value="lớp 4"></option>
+                    <option value="lớp 5"></option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td align="left">Email</td>
+            <td><input type="text" name="email"></td>
+        </tr>
+        <tr>
+            <td rowspan="2" align="left" valign="top">Điện thoại</td>
+            <td><input type="number" name="phone"></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Đăng ký">
+                <input type="reset" value="Nhập lại">
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

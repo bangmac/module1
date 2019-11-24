@@ -1,0 +1,11 @@
+form#register {
+    margin: 50px;
+    background-color: darkkhaki;
+    height: 350px;
+    width: 470px;
+}
+h3#heading {
+    margin: 10px 2px 10px 2px;
+    background-color: aquamarine;
+    color: blue;
+}
