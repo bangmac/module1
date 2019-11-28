@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    Result <input type="text" id="result" >
+    <br>
+    <input type="button" id="button1" value="1" onclick="displayValue(this.value)">
+    <input type="button" id="button2" value="2" onclick="displayValue(this.value)">
+    <input type="button" id="button3" value="3" onclick="displayValue(this.value)">
+    <input type="button" id="button+" value="+" onclick="displayValue(this.value)">
+    <input type="button" id="button=" value="=" onclick="calculate()">
+</form>
+<script>
+    let str="";
+    function displayValue(value){
+        str+=value;
+        document.getElementById("result").value=str;
+    }
+    function calculate(){
+        document.getElementById("result").value=eval(document.getElementById("result").value);
+    }
+</script>
+</body>
+</html>
