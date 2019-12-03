@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let height = parseInt(prompt('enter the height'));
+    let width = parseInt(prompt('enter the width'));
+    for (let i = 0; i<=height; i++){
+        if (i == 0 || i == height){
+            for (let j = 0; j<=width; j++){
+                document.write('*')
+            }
+            document.write('<br>')
+        }else {
+            for (let j = 0; j<=width; j++){
+                if (j == 0 || j == width){
+                    document.write('*');
+                } else {
+                    document.write('&nbsp&nbsp')
+                }
+            }
+            document.write('<br>')
+        }
+    }
+</script>
+</body>
+</html>
