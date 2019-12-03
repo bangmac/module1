@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button type="button" onclick="guess()">Play</button>
+<script>
+    function guess() {
+        let min = parseInt(prompt(" number from "));
+        let max = parseInt(prompt("to number"));
+        let randomNum = Math.floor(Math.random() * (max-min) + min);
+        console.log(randomNum);
+        let choseNum;
+        do {
+            choseNum = parseInt(prompt('enter the number you chose'));
+            if (choseNum == randomNum){
+                alert('chuc mung ban da doan dung');
+            }else if (choseNum > randomNum){
+                alert('so ban chon lon hon so chinh xac, vui long chon lai')
+            }else {
+                alert('so ban chon nho hon so chinh xac, vui long chon lai')
+            }
+        }while (choseNum !== randomNum)
+    }
+</script>
+</body>
+</html>
