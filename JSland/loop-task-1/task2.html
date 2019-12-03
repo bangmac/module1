@@ -6,12 +6,16 @@
 </head>
 <body>
 <script>
-    let C = prompt('enter Cencius');
-    if (C>100){
-        alert('yeu cau nguoi dung giam nhiet do')
-    }else if (C<20) {
-        alert('yeu cau nguoi dung tang nhiet do')
-    }
+    do {
+        let C = prompt('enter Cencius');
+        if (C > 100) {
+            alert('yeu cau nguoi dung giam nhiet do')
+        } else if (C < 20) {
+            alert('yeu cau nguoi dung tang nhiet do')
+        }
+    } while (C > 20 || C < 100)
+
+
 </script>
 </body>
 </html>
