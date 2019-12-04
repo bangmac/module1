@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let multidimensional = [];
+    let rows = parseInt(prompt('enter rows'));
+    let cols = parseInt(prompt('enter cols'));
+    for (let i = 0;i<rows; i++){
+        multidimensional[i] = [];
+        for (let j = 0; j<cols; j++){
+            multidimensional[i][j]= parseInt(prompt('enter  value'));
+        }
+    }
+    console.log(multidimensional);
+</script>
+</body>
+</html>
