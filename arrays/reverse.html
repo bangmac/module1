@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đảo ngược mảng</title>
+</head>
+<body>
+<button id="check" onclick="reverse()">reverse</button>
+<script>
+    function reverse() {
+        let A = [2, 7, 10, 22, 18, 20, 39];
+        let first = 0;
+        let last = A.length-1;
+        let x;
+        while (first < last) {
+            x=A[first];
+            A[first] = A[last];
+            A[last]=x;
+            first++;
+            last--;
+        }document.write(A);
+    }
+</script>
+</body>
+</html>
