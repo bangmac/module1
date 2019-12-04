@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = [-2, 4, -5, 6, 1, -9];
+    let minduong;
+    for (let i = 0; i<6; i++) {
+        if (a[i]>0){
+            minduong = a[i];
+            break;
+        }
+    }
+    for (let i = 1; i<6; i++) {
+        if (a[i]<minduong && a[i] >0) {
+            minduong = a[i];
+        }
+    }
+    console.log(minduong)
+</script>
+</body>
+</html>
