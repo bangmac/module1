@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = [-2, 4, -5, 6, 1, -9];
+    function addElement(N,k) {
+        for (let i=a.length; i>k;i--){
+            a[i] = a[i-1];
+        }
+        a[k]=N;
+        document.write(a)
+    }
+    addElement(10,4);
+
+    // for (let i=6;i>2;i--){
+    //     a[i] = a[i-1]
+    // }
+    // a[2] = 20;
+    // document.write(a);
+</script>
+</body>
+</html>
