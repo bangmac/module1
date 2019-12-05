@@ -6,16 +6,28 @@
 </head>
 <body>
 <script>
-    let multidimensional = [];
-    let rows = parseInt(prompt('enter rows'));
-    let cols = parseInt(prompt('enter cols'));
-    for (let i = 0;i<rows; i++){
-        multidimensional[i] = [];
-        for (let j = 0; j<cols; j++){
-            multidimensional[i][j]= parseInt(prompt('enter  value'));
+    let iMax = 20;
+    let jMax = 10;
+    let f = new Array();
+
+    for (let i=0;i<iMax;i++) {
+        f[i] = new Array();
+        for (let j=0;j<jMax;j++){
+            f[i][j];
         }
     }
-    console.log(multidimensional);
+    console.log(f)
+
+    // let multidimensional = [];
+    // let rows = parseInt(prompt('enter rows'));
+    // let cols = parseInt(prompt('enter cols'));
+    // for (let i = 0;i<rows; i++){
+    //     multidimensional[i] = [];
+    //     for (let j = 0; j<cols; j++){
+    //         multidimensional[i][j]= parseInt(prompt('enter  value'));
+    //     }
+    // }
+    // console.log(multidimensional);
 </script>
 </body>
 </html>
