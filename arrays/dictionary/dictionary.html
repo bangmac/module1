@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <p><b>Nhap tu tieng anh</b></p>
+    <input type="text" id="in"><br>
+    <button type="button" onclick="convert()">Tra cuu</button><br>
+    <input type="text" id="out">
+</form>
+<script>
+    let eng = ["hello", "home", "car", "goodbye","dog"];
+    let viet = ["xin chao", "gia dinh", "oto", "tam biet", "con cho"];
+    function convert() {
+        let inputWords = document.getElementById("in").value;
+        for (let i=0;i<eng.length;i++){
+            if (inputWords == eng[i]){
+                console.log(inputWords);
+                        document.getElementById("out").value=viet[i];
+            }
+        }
+    }
+</script>
+</body>
+</html>
