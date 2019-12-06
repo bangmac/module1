@@ -5,6 +5,23 @@
     <title>Title</title>
 </head>
 <body>
-jkghjkl
+<script>
+    let confirmAnswer = confirm("Shall we play a game?");
+    function processConfirm(answer) {
+        let result; // biến để lưu giá trị cần trả về để hiển thị
+        if (answer) {
+            result = "Excellent. We'll play a nice game of chess.";
+            console.log(answer) // answer lúc này nhận giá trị là true = Ok
+        } else {
+            result = "Maybe later then.";
+            console.log(answer) // answer lúc này nhận giá trị là false = cancle
+        }
+        return result;
+    }
+
+    let theAnswer = processConfirm(confirmAnswer);
+    alert(theAnswer);
+
+</script>
 </body>
 </html>

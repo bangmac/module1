@@ -1,0 +1,5 @@
+Trong hộp thoại confirm hỏi "Shall we play a game?" có 2 kết quả
+nếu chọn Ok sẽ hiển thị ra một kết quả là "Excellent. We'll play a nice game of chess."
+nếu không chơi sẽ hiển thị kết quả : "Maybe later then."
+biến result để lưu kết quả cần hiển thị.
+khi gọi hàm
