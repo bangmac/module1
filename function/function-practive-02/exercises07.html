@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="startup()">
+<script>
+    function startup() {
+        let a = parseInt(prompt("Nhap A :"));
+        let b = parseInt(prompt("Nhap B :"));
+        document.write("Before : A = "+a+" B = "+b+"<br>");
+        swap(a,b);
+    }
+    function swap(a,b) {
+        let tmp = a;
+        a =b;
+        b= tmp;
+        document.write("After : A = "+a+" B = "+b);
+    }
+</script>
+</body>
+</html>

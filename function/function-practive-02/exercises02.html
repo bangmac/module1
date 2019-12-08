@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<p>Nhap ban kinh : <input style="text-align: right" type="number" id="inp"></p>
+<p>
+    <button type="button" id="C" onclick="convert(this.id)"> Chu vi</button>
+    <button type="button" id="S" onclick="convert(this.id)"> Dien tich</button>
+<p id="outp"></p>
+</body>
+<script>
+    function convert(id) {
+        let inp = document.getElementById("inp");
+        let out = document.getElementById("outp");
+        switch (id) {
+            case'C':
+                out.innerText = "Chu vi: " + (parseFloat(inp.value) * 2 * 3.14);
+                inp.focus();
+                break;
+            case'S':
+                out.innerText = "Dien tich: " + (parseFloat(inp.value) * parseFloat(inp.value) * 3.14);
+                inp.focus();
+        }
+    }
+</script>
+</body>
+</html>

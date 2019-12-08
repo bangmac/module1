@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="startup()">
+<script>
+    function startup() {
+        let inp =parseInt(prompt("Nhap 1 so :"));
+        document.write(inp+"! = "+cal(inp));
+    }
+    function cal(a) {
+        let result =1;
+        for(let i = a;i>=2;i--){
+            result*=i;
+        }
+        return result;
+    }
+</script>
+</body>
+</html>

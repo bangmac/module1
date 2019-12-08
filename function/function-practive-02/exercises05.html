@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="startup()">
+<script>
+    function startup() {
+        let a = parseInt(prompt("Nhap A :"));
+        let b = parseInt(prompt("Nhap B :"));
+        let c = parseInt(prompt("Nhap C :"));
+        document.write("MAx trong 3 so la: "+Max(a,b,c));
+    }
+    function Max(a,b,c){
+        let max = a;
+        if(max < b) max = b;
+        if(max < c) max = c;
+        return max;
+    }
+</script>
+</body>
+</html>

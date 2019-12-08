@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="startup()">
+<script>
+    function startup() {
+        let inp = prompt("Enter Array(num1,num2,..,numN): ");
+        let a =inp.split(',');
+        document.write("Before: "+a+"<br>");
+        revers(a);
+    }
+    function revers(a) {
+        a.reverse();
+        document.write("After: "+a);
+    }
+</script>
+</body>
+</html>

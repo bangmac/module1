@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="startup()">
+<script>
+    function startup() {
+        let inp = prompt("Enter the character array: ");
+        let a = inp.split("");
+        let marker = prompt("Enter character you want to check for in the array: ");
+        let count = check(a,marker);
+        document.write(count);
+    }
+    function check(a,marker) {
+        let count = 0;
+        for( let i =0;i< a.length;i++){
+            if(a[i]==marker){
+                count++;
+            }
+        }
+        if(count==0) count = -1;
+        return count;
+    }
+</script>
+</body>
+</html>
