@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    table {
+        width: 50%;
+        height: 300px;
+        border-collapse: collapse;
+        font-family: arial, sans-serif;
+    }
+    td {
+        padding: 5px;
+        text-align: center;
+    }
+    input[type=button] {
+        opacity: 0.8;
+        background-color: #f5f5f5;
+        background-image: linear-gradient(top, #f5f5f5, #f1f1f1);
+        border: 1px solid #dedede;
+        color: #444;
+        height: 45px;
+        width: 65px;
+        text-align: center;
+        font-size: 1.2em;
+        font-weight: normal;
+    }
+</style>
+<body>
+<fieldset style="width: 20%">
+    <table>
+        <tr>
+            <td colspan="4"><input  type="text" style="width: 100%;height: 50px;text-align: right;font: large" id="dis"></td>
+        </tr>
+        <tr>
+            <td><input type="button" id="1"  value="1" onclick="set(1)"></td>
+            <td><input type="button" id="2" value="2" onclick="set(2)"></td>
+            <td><input type="button" id="3"  value="3" onclick="set(3)"></td>
+            <td><input type="button" id="+"  value="+" onclick="set('+')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" id="4"  value="4" onclick="set(4)"></td>
+            <td><input type="button" id="5" value="5" onclick="set(5)"></td>
+            <td><input type="button" id="6"  value="6" onclick="set(6)"></td>
+            <td><input type="button" id="-"  value="-" onclick="set('-')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" id="7"  value="7" onclick="set(7)"></td>
+            <td><input type="button" id="8" value="8" onclick="set(8)"></td>
+            <td><input type="button" id="9"  value="9" onclick="set(9)"></td>
+            <td><input type="button" id="x"  value="x" onclick="set('*')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" id="C"  value="C" onclick="ce()"></td>
+            <td><input type="button" id="0" value="0" onclick="set(0)"></td>
+            <td><input type="button" id="="  value="=" onclick="cal()"></td>
+            <td><input type="button" id="/"  value="+" onclick="set('/')"></td>
+        </tr>
+    </table>
+</fieldset>
+<script>
+    function set(op) {
+        document.getElementById("dis").value += op;
+    }
+    function ce() {
+        document.getElementById("dis").value="";
+    }
+    function cal() {
+        let inp = document.getElementById("dis").value;
+        let result = eval(inp);
+        document.getElementById("dis").value=result;
+    }
+    //tnt
+</script>
+</body>
+</html>
