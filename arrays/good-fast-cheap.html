@@ -1,74 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>GOOD-FAST-CHEAP</title>
+    <title>Ứng dụng good-fast-cheap</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        h3 {
+            text-align: justify;
+            font-size: 30px;
+            line-height: 60px;
+            margin-left: 140px;
+        }
+        #container {
+            height: 300px;
+            margin: 30px auto;
+            width: 250px;
+        }
+        #container .box {
+            height: 60px;
+            margin-top: 30px;
+            position: relative;
+            width: 100%;
+        }
+        #container .box .btn {}
+        #fast,
+        #cheap,
+        #good {
+            background-color: gray;
+            border-radius: 50%;
+            border: 1px solid gray;
+            display: inline-block;
+            height: 40px;
+            line-height: 60px;
+            position: absolute;
+            top: 10px;
+            width: 20%;
+            transition: 0.25s;
+        }
+    </style>
 </head>
+
 <body>
 <div id="container">
-    <div id="circle_1" style="top:100px;left:100px;" onclick="moveSelection_1()">  </div>
-    <p id="good">GOOD</p>
-    <div id="circle_2" style="top:170px;left:100px;" onclick="moveSelection_2()">  </div>
-    <p id="cheap">CHEAP</p>
-    <div id="circle_3" style="top:240px;left:100px; "onclick="moveSelection_3()">  </div>
-    <p id="fast">FAST</p>
-    <div id="eclipse_1" style="top:110px;left:120px;">  </div>
-    <div id="eclipse_2" style="top:180px;left:120px;"> </div>
-    <div id="eclipse_3" style="top:250px;left:120px;"> </div>
+    <div class="box">
+        <div id="good" style="left:0px;" onclick="control_toggle('good');"></div>
+        <h3>GOOD</h3>
+    </div>
+    <div class="box">
+        <div id="cheap" style="left:0px;" onclick="control_toggle('cheap');"></div>
+        <h3>CHEAP</h3>
+    </div>
+    <div class="box">
+        <div id="fast" style="left:0px;" onclick="control_toggle('fast');"></div>
+        <h3>FAST</h3>
+    </div>
 </div>
-<script>
-    let circle_1=document.getElementById("circle_1");
-    let circle_2=document.getElementById("circle_2");
-    let circle_3=document.getElementById("circle_3");
-    let status_Of_Circle_1= false; // bien luu trang thai cua circle_1
-    let status_Of_Circle_2= false; // bien luu trang thai cua circle_2
-    let status_Of_Circle_3= false; // bien luu trang thai cua circle_3
-    let d_1=-1; // bien luu gia tri trang thai cua circle_1
-    let d_2=-1; // bien luu gia tri rang thai cua circle_2
-    let d_3=-1; // bien luu gia tri trang thai cua circle_3
-    function moveSelection_1()
-    {
-        if (status_Of_Circle_1 == false)
-        {
-            status_Of_Circle_1 = true;
-            d_1= -d_1;
-            circle_1.style.left = parseInt(circle_1.style.left) + d_1 * 110 + 'px';
-            if (status_Of_Circle_2 == true && status_Of_Circle_3 == true)
-            {
-                status_Of_Circle_2 = false;
-                d_2=-d_2;
-                circle_2.style.left = parseInt(circle_2.style.left) + d_2 * 110 + 'px';
-            }
-        }
+<script type="text/javascript">
+    let fast = document.getElementById("fast");
+    let cheap = document.getElementById("cheap");
+    let good = document.getElementById("good");
+    function toggle_on(id) {
+        id.style.left = parseInt(id.style.left) + 15 + "px";
+        id.style.backgroundColor = "#6cdc45";
+        id.style.bordrColor = "#6cdc45";
     }
-    function moveSelection_2()
-    {
-        if (status_Of_Circle_2 == false)
-        {
-            status_Of_Circle_2 = true;
-            d_2 = -d_2;
-            circle_2.style.left = parseInt(circle_2.style.left) + d_2 * 110 + 'px';
-            if (status_Of_Circle_1 == true && status_Of_Circle_3 == true)
-            {
-                status_Of_Circle_3 = false;
-                d_3= -d_3;
-                circle_3.style.left = parseInt(circle_3.style.left) + d_3 * 110 + 'px';
-            }
-        }
+    function toggle_off(id) {
+        id.style.left = parseInt(id.style.left) - 15 + "px";
+        id.style.backgroundColor = "gray";
     }
-    function moveSelection_3()
-    {
-        if (status_Of_Circle_3 == false)
-        {
-            status_Of_Circle_3 = true;
-            d_3 = -d_3;
-            circle_3.style.left = parseInt(circle_3.style.left) + d_3 * 110 + 'px';
-            if (status_Of_Circle_1 == true && status_Of_Circle_2 == true)
-            {
-                status_Of_Circle_1 = false;
-                d_1=-d_1;
-                circle_1.style.left = parseInt(circle_1.style.left) + d_1 * 110 + 'px';
-            }
+    function control_toggle(element) {
+        let left = 0;
+        switch (element) {
+            case "fast":
+                left = parseInt(fast.style.left);
+                if (left == 0) {
+                    if (parseInt(good.style.left) == 15 &&
+                        parseInt(cheap.style.left) == 15) {
+                        toggle_off(cheap);
+                    }
+                    toggle_on(fast);
+                } else
+                    toggle_off(fast);
+                break;
+            case "cheap":
+                left = parseInt(cheap.style.left);
+                if (left == 0) {
+                    if (parseInt(fast.style.left) == 15 &&
+                        parseInt(good.style.left) == 15) {
+                        toggle_off(good);
+                    }
+                    toggle_on(cheap);
+                } else
+                    toggle_off(cheap);
+                break;
+            case "good":
+                left = parseInt(good.style.left);
+                if (left == 0) {
+                    if (parseInt(fast.style.left) == 15 &&
+                        parseInt(cheap.style.left) == 15) {
+                        toggle_off(fast);
+                    }
+                    toggle_on(good);
+                } else
+                    toggle_off(good);
+                break;
         }
     }
 </script>
