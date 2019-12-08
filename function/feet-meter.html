@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    button{
+        margin: 20px;
+    }
+    input{
+        text-align: right;
+    }
+</style>
+<body>
+<p><label>Input:    </label><input id="inp" type="number"></p>
+<br>
+<p><label>Output:    </label><input id="outp" type="text" disabled></p>
+<br>
+<button id="feet" onclick="convert(this.id)">Feet to Meter</button>
+<button id="meter" onclick="convert(this.id)">Meter to Feet</button>
+</body>
+<script>
+    function convert(id) {
+        let inp = document.getElementById('inp');
+        let outp = document.getElementById('outp');
+        switch (id) {
+            case 'feet':
+                outp.value += inp.value+' feet = '+(3.279*parseFloat(inp.value))+' meters';
+                break;
+            case 'meter':
+                outp.value = inp.value+' meters = '+(0.305*parseFloat(inp.value))+' feet';
+        }
+        inp.value="";
+        inp.focus();
+    }
+    //mstnt
+</script>
+</html>
