@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="startup()">
+<script>
+    function startup() {
+        let inp = prompt("Nhap 1 so: ");
+        inp = inc(parseInt(inp));
+        alert("Ket qua: " + inp);
+    }
+
+    function inc(i) {
+        return i + 1;
+    }
+</script>
+</body>
+</html>

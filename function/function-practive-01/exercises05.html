@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const star = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+    const starSystem = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa', 'Major', 'Leo'];
+    let inp = prompt("Enter the name of a star: ");
+    let flag = 0;
+    for (i = 0; i < star.length; i++) {
+        if (inp.toLowerCase() == star[i].toLowerCase()) {
+            document.write(inp + ' is in the ' + starSystem[i] + ' StarSystem');
+            flag = 1;
+            break;
+        }
+    }
+    if (flag == 0) {
+        alert(inp + " currently not in this program yet! it'll be added  in later time!");
+    }
+</script>
+</body>
+</html>
