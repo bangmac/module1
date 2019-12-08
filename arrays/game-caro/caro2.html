@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>carogame</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            width: 850px;
+            height: 50px;
+            text-align: center;
+            vertical-align: mid;
+        }
+    </style>
+</head>
+<body>
+<td onclick="insert() checkWin()"></td>
+<div id="hienthi"></div>
+<script>
+    let condition = prompt("ban muon bao nhieu la win?");
+    let banco;
+    let arrDisplay = [];
+    let player = ["X", "O"];
+    let index = 0;
+    function draw() {
+        banco = "<table>";
+        for (let i = 0; i < 15; i++) {
+            banco += "<tr>";
+            arrDisplay[i] = [];
+            for (let j = 0; j < 15; j++) {
+                arrDisplay[i][j] = " ";
+                banco += "<td onclick=\"insert(" + i + "," + j + ")\" >" + arrDisplay[i][j] + "</td>";
+            }
+            banco += "</tr>";
+        }
+        banco += "</table>";
+        document.getElementById("hienthi").innerHTML = banco;
+    }
+    function insert(i, j) {
+        arrDisplay[i][j] = player[index];
+        console.log(arrDisplay);
+        index = 1 - index;
+        drawAfterflag();
+        checkWin();
+    }
+    function drawAfterflag() {
+        banco = "<table>";
+        for (let i = 0; i < 15; i++) {
+            banco += "<tr>";
+            for (let j = 0; j < 15; j++) {
+                banco += "<td onclick=\"insert(" + i + "," + j + ")\" >" + arrDisplay[i][j] + "</td>";
+            }
+            banco += "</tr>";
+        }
+        banco += "</table>";
+        document.getElementById("hienthi").innerHTML = banco;
+    }
+    function checkWin() {
+        for (let i = 0; i < 15; i++) {
+            for (let j = 0; j < 15; j++) {
+                if (arrDisplay[i][j] != " ") {
+                    let count = 0;
+                    while (arrDisplay[i][j] == arrDisplay[i][j + 1]) {
+                        count += 1;
+                        j++;
+                        if (count == (condition - 1)) {
+                            alert(arrDisplay[i][j] + " win");
+                            return;
+                        }
+                    }
+                    count = 0;
+                    while (arrDisplay[i][j] == arrDisplay[i + 1][j]) {
+                        count += 1;
+                        i++;
+                        if (count == (condition - 1)) {
+                            alert(arrDisplay[i][j] + " win");
+                            return;
+                        }
+                    }
+                    count = 0;
+                    while (arrDisplay[i][j] == arrDisplay[i + 1][j + 1]) {
+                        count += 1;
+                        i++;
+                        j++;
+                        if (count == (condition - 1)) {
+                            alert(arrDisplay[i][j] + " win");
+                            return;
+                        }
+                    }
+                    count = 0;
+                    while (arrDisplay[i][j] == arrDisplay[i + 1][j - 1]) {
+                        count += 1;
+                        i++;
+                        j--;
+                        if (count == (condition - 1)) {
+                            alert(arrDisplay[i][j] + " win");
+                            return;
+                        }
+                    }
+                    count = 0;
+                }
+            }
+        }
+    }
+    draw();
+</script>
+</body>
+</html>
