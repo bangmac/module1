@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GOOD-FAST-CHEAP</title>
+</head>
+<body>
+<div id="container">
+    <div id="circle_1" style="top:100px;left:100px;" onclick="moveSelection_1()">  </div>
+    <p id="good">GOOD</p>
+    <div id="circle_2" style="top:170px;left:100px;" onclick="moveSelection_2()">  </div>
+    <p id="cheap">CHEAP</p>
+    <div id="circle_3" style="top:240px;left:100px; "onclick="moveSelection_3()">  </div>
+    <p id="fast">FAST</p>
+    <div id="eclipse_1" style="top:110px;left:120px;">  </div>
+    <div id="eclipse_2" style="top:180px;left:120px;"> </div>
+    <div id="eclipse_3" style="top:250px;left:120px;"> </div>
+</div>
+<script>
+    let circle_1=document.getElementById("circle_1");
+    let circle_2=document.getElementById("circle_2");
+    let circle_3=document.getElementById("circle_3");
+    let status_Of_Circle_1= false; // bien luu trang thai cua circle_1
+    let status_Of_Circle_2= false; // bien luu trang thai cua circle_2
+    let status_Of_Circle_3= false; // bien luu trang thai cua circle_3
+    let d_1=-1; // bien luu gia tri trang thai cua circle_1
+    let d_2=-1; // bien luu gia tri rang thai cua circle_2
+    let d_3=-1; // bien luu gia tri trang thai cua circle_3
+    function moveSelection_1()
+    {
+        if (status_Of_Circle_1 == false)
+        {
+            status_Of_Circle_1 = true;
+            d_1= -d_1;
+            circle_1.style.left = parseInt(circle_1.style.left) + d_1 * 110 + 'px';
+            if (status_Of_Circle_2 == true && status_Of_Circle_3 == true)
+            {
+                status_Of_Circle_2 = false;
+                d_2=-d_2;
+                circle_2.style.left = parseInt(circle_2.style.left) + d_2 * 110 + 'px';
+            }
+        }
+    }
+    function moveSelection_2()
+    {
+        if (status_Of_Circle_2 == false)
+        {
+            status_Of_Circle_2 = true;
+            d_2 = -d_2;
+            circle_2.style.left = parseInt(circle_2.style.left) + d_2 * 110 + 'px';
+            if (status_Of_Circle_1 == true && status_Of_Circle_3 == true)
+            {
+                status_Of_Circle_3 = false;
+                d_3= -d_3;
+                circle_3.style.left = parseInt(circle_3.style.left) + d_3 * 110 + 'px';
+            }
+        }
+    }
+    function moveSelection_3()
+    {
+        if (status_Of_Circle_3 == false)
+        {
+            status_Of_Circle_3 = true;
+            d_3 = -d_3;
+            circle_3.style.left = parseInt(circle_3.style.left) + d_3 * 110 + 'px';
+            if (status_Of_Circle_1 == true && status_Of_Circle_2 == true)
+            {
+                status_Of_Circle_1 = false;
+                d_1=-d_1;
+                circle_1.style.left = parseInt(circle_1.style.left) + d_1 * 110 + 'px';
+            }
+        }
+    }
+</script>
+</body>
+</html>
