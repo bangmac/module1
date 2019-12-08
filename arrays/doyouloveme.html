@@ -2,26 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Do you love me</title>
-</head>
-<script>
-    //hoang
-    function yesClick()
-    {
-        alert("tôi cũng thế <3");
-    }
-    function noHover()
-    {
-        var x = Math.round(Math.random() * window.innerWidth);
-        var y = Math.round(Math.random() * window.innerHeight);
-        document.getElementById('btnNo').style.left = x + 'px';
-        document.getElementById('btnNo').style.top = y + 'px';
-    }
-</script>
+    <title>Title</title>
 </head>
 <body>
-<h1 style="position:absolute; left:220px; top:175px;">Do you love me?</h1>
-<input type="button" value=" YES " onclick="yesClick()" style="position:absolute; left:285px; top:235px;"/>
-<input type="button" id="btnNo" value="  NO  " onmouseover="noHover()" style="position:absolute; left:360px; top:235px;"/>
+<div>
+    <h2> Do You Love Me ?</h2>
+    <input type="button" value="YES" style="position: absolute;left: 15px;top: 70px"  onclick="love()">
+    <input type="button" id="no" style="position: absolute;left: 120px;top: 70px" value="NO" onmouseover="move()">
+</div>
 </body>
+<script>
+    function love() {
+        alert("<3")
+    }
+    function move() {
+        let no = document.getElementById("no");
+        let wh = parseInt(window.innerHeight);
+        let ww = parseInt(window.innerWidth);
+        let rh = parseInt(no.getBoundingClientRect().top);
+        let rw = parseInt(no.getBoundingClientRect().left);
+        let tmp1 = rh;
+        let tmp2 =rw;
+        if(rh == tmp1 && rw == tmp2){
+            rh = Math.random()*wh;
+            rw = Math.random()*ww;
+        }
+        no.style.left=rw+"px";
+        no.style.top=rh+"px";
+    }
+    //tnt
+</script>
 </html>
