@@ -1,116 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <title>Ứng dụng good-fast-cheap</title>
-    <style type="text/css">
-        * {
-            margin: 0;
-            padding: 0;
-        }
-        h3 {
-            text-align: justify;
-            font-size: 30px;
-            line-height: 60px;
-            margin-left: 140px;
-        }
-        #container {
-            height: 300px;
-            margin: 30px auto;
-            width: 250px;
-        }
-        #container .box {
-            height: 60px;
-            margin-top: 30px;
-            position: relative;
-            width: 100%;
-        }
-        #container .box .btn {}
-        #fast,
-        #cheap,
-        #good {
-            background-color: gray;
-            border-radius: 50%;
-            border: 1px solid gray;
-            display: inline-block;
-            height: 40px;
-            line-height: 60px;
-            position: absolute;
-            top: 10px;
-            width: 20%;
-            transition: 0.25s;
-        }
-    </style>
+    <title>Title</title>
 </head>
-
 <body>
-<div id="container">
-    <div class="box">
-        <div id="good" style="left:0px;" onclick="control_toggle('good');"></div>
-        <h3>GOOD</h3>
-    </div>
-    <div class="box">
-        <div id="cheap" style="left:0px;" onclick="control_toggle('cheap');"></div>
-        <h3>CHEAP</h3>
-    </div>
-    <div class="box">
-        <div id="fast" style="left:0px;" onclick="control_toggle('fast');"></div>
-        <h3>FAST</h3>
-    </div>
-</div>
-<script type="text/javascript">
-    let fast = document.getElementById("fast");
-    let cheap = document.getElementById("cheap");
-    let good = document.getElementById("good");
-    function toggle_on(id) {
-        id.style.left = parseInt(id.style.left) + 15 + "px";
-        id.style.backgroundColor = "#6cdc45";
-        id.style.bordrColor = "#6cdc45";
-    }
-    function toggle_off(id) {
-        id.style.left = parseInt(id.style.left) - 15 + "px";
-        id.style.backgroundColor = "gray";
-    }
-    function control_toggle(element) {
-        let left = 0;
-        switch (element) {
-            case "fast":
-                left = parseInt(fast.style.left);
-                if (left == 0) {
-                    if (parseInt(good.style.left) == 15 &&
-                        parseInt(cheap.style.left) == 15) {
-                        toggle_off(cheap);
+<fieldset style="border-style:dot-dot-dash; width: 30%">
+    <legend><h2>Good-Fast-Cheap</h2></legend>
+    <input type="checkbox" onclick="check(this.id);" id="gd" style="margin: 10px"><b
+        style="font-size: large">Good</b><br>
+    <input type="checkbox" onclick="check(this.id)" id="ft"  style="margin: 10px"><b
+        style="font-size: large">Fast</b><br>
+    <input type="checkbox" onclick="check(this.id)" id="cp" style="margin: 10px"><b
+        style="font-size: large">Cheap</b><br>
+</fieldset>
+
+<script>
+    function check(id) {
+        let g = document.getElementById("gd");
+        let f = document.getElementById("ft");
+        let c = document.getElementById("cp");
+        let good = g.checked,
+            cheap = f.checked,
+            fast = c.checked;
+        switch (id) {
+            case "gd":
+                if(good){
+                    if(cheap&&fast){
+                        f.checked =false;
                     }
-                    toggle_on(fast);
-                } else
-                    toggle_off(fast);
+                }
                 break;
-            case "cheap":
-                left = parseInt(cheap.style.left);
-                if (left == 0) {
-                    if (parseInt(fast.style.left) == 15 &&
-                        parseInt(good.style.left) == 15) {
-                        toggle_off(good);
+            case "ft":
+                if(fast){
+                    if(good && cheap){
+                        c.checked =false;
                     }
-                    toggle_on(cheap);
-                } else
-                    toggle_off(cheap);
+                }
                 break;
-            case "good":
-                left = parseInt(good.style.left);
-                if (left == 0) {
-                    if (parseInt(fast.style.left) == 15 &&
-                        parseInt(cheap.style.left) == 15) {
-                        toggle_off(fast);
+            case "cp":
+                if(cheap){
+                    if(fast && good){
+                        g.checked =false;
                     }
-                    toggle_on(good);
-                } else
-                    toggle_off(good);
-                break;
+                }
         }
     }
-    //msvka
+    //tnt
 </script>
 </body>
 </html>
