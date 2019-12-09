@@ -36,7 +36,17 @@
         alert('tam biet')
     };
 
-    console.log(person)
+    console.log(person);
+
+    let myDataName = nameInput.value;
+    let myDataValue = nameValue.value;
+
+    person[myDataName] = myDataValue;
+
+    let myDataName = 'height';
+    let myDataValue = '1,75m';
+
+    console.log(person.height);
 </script>
 </body>
 </html>
