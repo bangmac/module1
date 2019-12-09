@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload=loadF()>
+<textarea onkeydown="typing2()" id="ta" style="margin: 200px 0 0 700px"></textarea>
+</body>
+<script>
+    let str = "I'm F**king stupid!!";
+    let count = 0;
+    let text ="";
+    function typing(evt) {
+        let ta = document.getElementById("ta");
+        let inp = evt.which;
+        if (count < str.length) {
+            if (inp == 37 || inp == 38 || inp == 39 || inp == 40) {
+            } else {
+                text = text+str[count];
+                ta.value = text;
+                count++;
+            }
+        } else {
+            count = 0;
+            ta.value = "";
+            text = "";
+        }
+    }
+    function loadF() {
+        window.addEventListener('keypress', typing);
+    }
+</script>
+</html>
