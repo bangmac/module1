@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="productdtl.css">
+</head>
+<body onload="displayProducts()">
+<form>
+    <fieldset style="height: 70px">
+        <legend>Add New Product</legend>
+        <input id="productName" type="text" style="opacity: 0.65">
+        <button class="btn" type="button" onclick="addNewProduct()">Add</button>
+        <!--        <button class="btn" type="button" onclick="displayProducts()">Display</button>-->
+        <p id="notification" style="opacity: 0.75"></p>
+    </fieldset>
+</form>
+<h3>All Product</h3>
+<div id="displayProducts"></div>
+</body>
+<script src="productdtl.js"></script>
+</html>

@@ -1,0 +1,19 @@
+.btn {
+    background-color: limegreen;
+    width: 60px;
+    height: 30px;
+    border-radius: 10%;
+    border: 0px;
+}
+
+tr {
+    width: 500px
+}
+
+#tdId {
+    width: 15%;
+}
+
+#tdName {
+    width: 53%;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    tr {
+        border-style: solid;
+    }
+    td {
+        border-style: solid;
+    }
+</style>
+<body onload="showL()">
+<fieldset style="width: fit-content">
+    <legend><h2>Product List</h2></legend>
+    <table id="tbl" style="width: fit-content">
+        <tr>
+            <td>ID</td>
+            <td>Product Name</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</fieldset>
+<p><button type="button"  style="font-weight: bolder" onclick="addP()">ADD</button></p>
+</body>
+<script>
+    let productList = ['Condom', 'Lube', 'Apple','Lemon'];
+    function showL() {
+        let def = "<tr>\n" +
+            "            <td>ID</td>\n" +
+            "            <td>Product Name</td>\n" +
+            "            <td></td>\n" +
+            "            <td></td>\n" +
+            "        </tr>";
+        let tbl = document.getElementById("tbl");
+        tbl.innerHTML = def;
+        for (let i = 0; i < productList.length; i++) {
+            tbl.innerHTML += '<tr><td>' + (i + 1) + '</td>' + '<td>' + productList[i] + '</td><td><button type="button" onclick="Rename('+i+')">Rename</button></td><td><button type="button" onclick="DeleteP('+i+')">Delete</button></td>';
+        }
+    }
+    function addP() {
+        let name = prompt("Enter name of the product you wanna add to the list: ");
+        productList.push(name);
+        showL();
+    }
+    function Rename(a) {
+        let change = prompt("Enter new name for the selected product: ",productList[a]);
+        productList[a] = change;
+        showL();
+    }
+    function DeleteP(a) {
+        if(confirm("Are you sure ?")){
+            let i = 0;
+            let tmp=[];
+            for( let j =0;j<productList.length;j++){
+                if(j==a){
+                }else{
+                    tmp.push(productList[j]);
+                }
+            }
+            productList = tmp;
+            showL();
+        }
+    }
+</script>
+</html>

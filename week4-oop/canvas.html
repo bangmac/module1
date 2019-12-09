@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas</title>
+</head>
+<body>
+<canvas id="myCanvas" height="500" width="1000" style="border: 1px solid #000000;"></canvas>
+<script>
+    let c = document.getElementById('myCanvas');
+    let ctx = c.getContext('2d');
+    ctx.beginPath();
+    ctx.arc(90,50,40,0,2*Math.PI);
+    ctx.stroke();
+
+    ctx.fillStyle = '#FF0000';
+    ctx.fillRect(200,200,300,75);
+
+    ctx.font = '50px Arial';
+    ctx.fillText("Hello World", 500, 50);
+</script>
+</body>
+</html>
