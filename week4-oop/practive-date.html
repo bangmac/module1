@@ -20,28 +20,38 @@
             return this.year
         };
         this.setDay = function (day) {
-            return this.day
+            this.day = day
         };
         this.setMonth = function (month) {
-            return this.month
+            this.month = month
         };
         this.setYear = function (year) {
-            return this.year
+            this.year = year
         }
     };
     let date = new myDate(2,2,2007);
-    let day = date.getDay();
-    console.log(day);
-    let month = date.getMonth();
-    console.log(month);
-    let year = date.getYear();
-    console.log(year);
+    console.log(date);
 
-    date.setDay(10);
-    date.setMonth(10);
-    date.setYear(2019);
+    let day = date.setDay(10);
+    let month = date.setMonth(10);
+    let year = date.setYear(2019);
 
-    alert(day + month + year);
+    alert(day + "/" + month + "/" + year);
+    console.log(date);
+    // let day = date.getDay();
+    // console.log(day);
+    // let month = date.getMonth();
+    // console.log(month);
+    // let year = date.getYear();
+    // console.log(year);
+
+    // let date2 = new myDate(3,10,2020);
+    // let day2 = date2.getDay();
+    // let month2 = date2.getMonth();
+    // let year2 = date2.getYear();
+    // alert(day2 + "+" + month2 + "+" +year2);
+
+    //alert(day + "+" + month + "+" + year);
 
 </script>
 </body>

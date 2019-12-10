@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas height="800" id="myCanvas" style="border: 1px solid #d3d3d3" width="1200"></canvas>
+<script>
+    function Retangle(x,y,height,width) {
+        this.x = x;
+        this.y = y;
+        this.height = height;
+        this.width = width;
+        this.area = function () {
+            return this.height * this.width
+        };
+        this.perimeter = function () {
+            return (this.height + this.width) * 2;
+        };
+    }
+
+    function getRandomHex(){
+        return Math.floor(Math.random()*255);
+    }
+
+    function getRandomColor(){
+        let red = getRandomHex();
+        let green = getRandomHex();
+        let blue = getRandomHex();
+        return "rgb(" + red + "," + blue + "," + green +")";
+    }
+
+    function drawRetangle() {
+        let ctx = document.getElementById('myCanvas').getContext('2d');
+        let x = Math.random() * window.innerWidth;
+        let y = Math.random() * window.innerHeight;
+        let height = Math.floor(Math.random() * 200);
+        let width = Math.floor(Math.random() * 200);
+        let color = getRandomColor();
+        let rec = new Retangle(x,y,height,width);
+        ctx.fillRect(x, y, height, width);
+        ctx.fillStyle = color;
+    }
+
+    function mulRetangle() {
+        for (let i=0;i<30;i++){
+            drawRetangle()
+        }
+    }
+
+    mulRetangle();
+
+</script>
+</body>
+</html>
