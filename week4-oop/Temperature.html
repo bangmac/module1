@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Temperature(C, F, K) {
+        this.C = C;
+        this.F = F;
+        this.K = K;
+        this.convertToF = function () {
+            return F = (C * 1.8) + 32
+        };
+        this.convertToK = function () {
+            return K = C + 273.15
+        };
+    }
+
+    let temp1 = new Temperature(25);
+    document.write('nhiet do F la' + temp1.convertToF() + 'nheit do K la' + temp1.convertToK())
+</script>
+</body>
+</html>
