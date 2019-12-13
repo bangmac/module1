@@ -13,12 +13,13 @@
         this.width = width;
         this.height = height;
         this.color = color;
-        this.render=function(){
-            let ctx = document.getElementById("myretangle").getContext("2d");
+        this.render=function(canvas){
+            let ctx = canvas.getContext("2d");
             ctx.fillStyle = this.color;
             ctx.fillRect(this.x, this.y, this.height, this.width);
         }
     }
+    let c = document.getElementById("myretangle");
     let rec1 = new Rectangle(10,10,200,100,"#FF0000");
-    rec1.render();
+    rec1.render(c);
 </script>
