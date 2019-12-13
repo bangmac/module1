@@ -5,19 +5,20 @@
     <title>Title</title>
 </head>
 <body>
-<canvas id="myretangle" width="1000px" height="1000px" style="border:1px solid #FF0000;"></canvas>
+<canvas id="myretangle" width="1000px" height="500px" style="border:1px solid #FF0000;"></canvas>
 <script>
-    function Rectangle(x,y,width,height) {
+    function Rectangle(x,y,width,height,color) {
         this.x=x;
         this.y=y;
         this.width = width;
         this.height = height;
+        this.color = color;
         this.render=function(){
             let ctx = document.getElementById("myretangle").getContext("2d");
-            ctx.fillStyle ="#000000";
+            ctx.fillStyle = this.color;
             ctx.fillRect(this.x, this.y, this.height, this.width);
         }
     }
-    let rec1 = new Rectangle(50,50,500,500);
+    let rec1 = new Rectangle(10,10,200,100,"#FF0000");
     rec1.render();
 </script>
