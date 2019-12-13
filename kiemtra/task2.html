@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr1 = [12,6,3,7,21,5,7];
+    function tryRemoveFromArray(arr,index) {
+        if (index >=0 && index <arr.length){
+            arr.splice(index,1);
+            return arr;
+        }else {
+            return arr;
+        }
+    }
+    // console.log(tryRemoveFromArray(arr1,2));
+    // console.log(tryRemoveFromArray(arr1,0));
+    console.log(tryRemoveFromArray(arr1,7));
+    console.log(tryRemoveFromArray(arr1,-2));
+</script>
+</body>
+</html>
