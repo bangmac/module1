@@ -1,19 +1,6 @@
 function buildingLevel(game,level) {
     let bricks = [];
 
-    // level.forEach((row, rowIndex) => {
-    //   row.forEach((brick, brickIndex) => {
-    //       let position = {
-    //         x: 80 * brickIndex,
-    //         y: 200 + 24 * rowIndex
-    //       };
-    //         if(brick === 1){
-    //             bricks.push(new Brick(game, position))
-    //         }
-    //   }) ;
-    // });
-    // return bricks;
-
     for(let i=0; i<level1.length;i++){
         for(let j = 0; j < 10; j++ ){
             let position = {
