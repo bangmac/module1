@@ -13,6 +13,19 @@ function buildingLevel(game,level) {
         }
     }
     return bricks;
+
+    // level.forEach((row, rowIndex) => {
+    //   row.forEach((brick, brickIndex) => {
+    //       let position = {
+    //         x: 80 * brickIndex,
+    //         y: 200 + 24 * rowIndex
+    //       };
+    //         if(brick === 1){
+    //             bricks.push(new Brick(game, position))
+    //         }
+    //   }) ;
+    // });
+    // return bricks;
 }
 const level1 = [
     // [0, 1, 1, 1, 0, 0, 1, 1, 1, 0],
